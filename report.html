@@ -13160,7 +13160,7 @@ zKxK/h9y1UWv+W8bygAAAABJRU5ErkJggg==
 <ul>
 <li><p><code>right</code>: It is not relevant since the vehicle at the right will not block the cab if the cab goes straight or left when the light is green. Also if the light is red and the cab intends to turn right, again it does not intersect with it.</p>
 </li>
-<li><p><code>deadline</code>: It is not relevant since knowledge of it does not change the behavior of the driver.</p>
+<li><p><code>deadline</code>: It is relevant but it makes the state space so large that it would be difficult for the agent to learn in that space.</p>
 </li>
 </ul>
 
@@ -13201,7 +13201,7 @@ zKxK/h9y1UWv+W8bygAAAABJRU5ErkJggg==
 <p>left={None, left, right, forward}</p>
 <p>oncoming={None, left, right, forward}</p>
 <p>$n(\rm waypoint)\times n(\rm light) \times n(\rm left) \times n(\rm oncoming)=3 \times 2 \times 4 \times 4=96$</p>
-<p>There are 96 states but also there are four different actions that the agent can take in each of these states. This will makes $4 \times 96=384$ possible states. In order for the agent to learn all possible states, we need to make sure the number of trials are large enough so that $\textrm{min number of actions per trial}\times\textrm{number of trials}\gg 384$.</p>
+<p>There are 96 states but also there are four different actions that the agent can take in each of these states. This will makes $4 \times 96=384$ possible state/action pair. In order for the agent to learn all possible states, we need to make sure the number of trials are large enough so that $\textrm{min number of actions per trial}\times\textrm{number of trials}\gg 384$.</p>
 
 </div>
 </div>
